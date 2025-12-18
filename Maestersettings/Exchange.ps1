@@ -12,3 +12,4 @@ Set-OwaMailboxPolicy -Identity "OwaMailboxPolicy-Default" -AdditionalStorageProv
 
 #MT.1041: Ensure users installing Outlook add-ins is not allowed
 Get-ManagementRoleAssignment -RoleAssignee "Default Role Assignment Policy" | Where-Object { $_.Role -like "My*Apps" } | Remove-ManagementRoleAssignment -Confirm:$false
+
