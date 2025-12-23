@@ -76,11 +76,18 @@ Write-Host "`n--- Installing test tooling (Pester & Maester) ---"
 Install-Module Pester -SkipPublisherCheck -Force -Scope CurrentUser
 Install-Module Maester -Scope CurrentUser -Force
 
-if (-not (Test-Path -Path ".\maester-tests")) {
-    md maester-tests | Out-Null
+Write-Host "`n--- Remove maester-tests map if exist and or create  ---"
+
+$path = ".\maester-tests"
+
+if (Test-Path $path) {
+    Remove-Item -Path $path -Recurse -Force
 }
 
-Set-Location maester-tests
+New-Item -ItemType Directory -Path $path | Out-Null
+Set-Location $path
+
+
 Install-MaesterTests
 
 Write-Host "`n--- Connecting Maester ---"
