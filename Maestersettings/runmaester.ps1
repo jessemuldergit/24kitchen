@@ -73,8 +73,8 @@ foreach ($module in $modules) {
 
 Write-Host "`n--- Installing test tooling (Pester & Maester) ---"
 
-Install-Module Pester -SkipPublisherCheck -Force -Scope CurrentUser
-Install-Module Maester -Scope CurrentUser -Force
+Install-Module Pester -Force
+Install-Module Maester -Force
 
 Write-Host "`n--- Remove maester-tests map if exist and or create  ---"
 
