@@ -90,6 +90,10 @@ Set-Location $path
 
 Install-MaesterTests
 
+Write-Host "`n--- Disconnecting Maester ---"
+Disconnect-Maester
+
+
 Write-Host "`n--- Connecting Maester ---"
 Connect-Maester -Service All
 
