@@ -1,0 +1,4 @@
+install github cli first
+
+
+gh repo create raffie-usb/NSF --private --source=. --remote=origin --push
